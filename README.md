@@ -36,53 +36,69 @@
 3. Запустіть програму у браузері за допомогою переходу за посиланням `localhost/`.
 
 ## Функціонал програми
-![image](https://github.com/KostyanL1/kpz_lab_002/assets/148667427/7496a210-d693-4845-aa35-c4ecfa37fbe8)
+![image](https://github.com/KostyanL1/kpz_lab_002/assets/148667427/8d3628ff-4592-4a3c-9235-2a562eba44c9)
+
 
 1. **Тварини**
    - Додавання нових тварин у систему.
-    ![image](https://github.com/KostyanL1/kpz_lab_002/assets/148667427/bb559cf8-ab39-4d58-9808-64ff33005203)
+    ![image](https://github.com/KostyanL1/kpz_lab_002/assets/148667427/cfc721a0-ea77-493e-b61c-d02fe1926fa0)
+
    - Відображення списку всіх тварин у зоопарку.
-     ![image](https://github.com/KostyanL1/kpz_lab_002/assets/148667427/8d87e1c4-7df2-4050-a3a6-cbf79fabe650)
+     ![image](https://github.com/KostyanL1/kpz_lab_002/assets/148667427/a4c11af4-84f9-46d2-bfb3-336239951403)
+
    - Перегляд детальної інформації про конкретну тварину.
-     ![image](https://github.com/KostyanL1/kpz_lab_002/assets/148667427/2d802faf-a2d5-4248-8a6d-a03d0e0ce1a1)
+     ![image](https://github.com/KostyanL1/kpz_lab_002/assets/148667427/d8873501-b911-4e2c-82fd-760ab886e826)
+
    - Редагування інформації про тварину.
-     ![image](https://github.com/KostyanL1/kpz_lab_002/assets/148667427/385ecce9-a2d5-4b50-946e-7c63f5935d69)
+     ![image](https://github.com/KostyanL1/kpz_lab_002/assets/148667427/43e457bd-8db7-429e-a5a0-012f41ffba0c)
+
 
 2. **Вольєри**
    - Додавання нових вольєрів у систему.
-     ![image](https://github.com/KostyanL1/kpz_lab_002/assets/148667427/af72be0c-a6e8-4323-889b-77b94cc46157)
+     ![image](https://github.com/KostyanL1/kpz_lab_002/assets/148667427/a6aac02f-cffd-44c7-92d9-cdc1b9b15907)
+
    - Відображення списку всіх вольєрів у зоопарку.
-     ![image](https://github.com/KostyanL1/kpz_lab_002/assets/148667427/77735d89-29d6-418b-ba98-8ef8899a9c3e)
+     ![image](https://github.com/KostyanL1/kpz_lab_002/assets/148667427/934b71dd-b613-401b-a06c-007acea54612)
+
    - Перегляд детальної інформації про конкретний вольєр.
-     ![image](https://github.com/KostyanL1/kpz_lab_002/assets/148667427/9c106c2c-232f-4b7d-afd7-6ddfc8cda880)
+     ![image](https://github.com/KostyanL1/kpz_lab_002/assets/148667427/0e949ae2-5ccc-499e-b523-bc15c04e6199)
+
    - Перегляд списку тварин, які проживають у вольєрі.
-    ![image](https://github.com/KostyanL1/kpz_lab_002/assets/148667427/4a2a90b8-5770-4c0b-b9a5-0e75ef59a641)
+     ![image](https://github.com/KostyanL1/kpz_lab_002/assets/148667427/52387feb-0df4-49e4-aa60-d9e096ad2b02)
+
 
 3. **Корми**:
    - Додавання нового корму.
-     ![image](https://github.com/KostyanL1/kpz_lab_002/assets/148667427/0c1fb19b-8ea0-4e00-8393-868474b317d9)
-   - Видалення корму.
-     ![image](https://github.com/KostyanL1/kpz_lab_002/assets/148667427/c53574e1-eaad-43b7-bb44-dfbe81752191)
-     ![image](https://github.com/KostyanL1/kpz_lab_002/assets/148667427/34b1fa51-7f80-47f3-ba8c-cca0ab16bdfc)
-   - Перегляд інформації про конкретний корм.
-     ![image](https://github.com/KostyanL1/kpz_lab_002/assets/148667427/34e4028a-8469-482f-93b9-5214aa11a5fc)
-   - Перегляд списку всіх кормів.
-     ![image](https://github.com/KostyanL1/kpz_lab_002/assets/148667427/7df65923-8995-40e6-afac-9c1e45efb0e6)
+     ![image](https://github.com/KostyanL1/kpz_lab_002/assets/148667427/e5c3f065-a6e0-4708-bc0e-954e5f07afcd)
 
-     
+   - Видалення корму.
+     ![image](https://github.com/KostyanL1/kpz_lab_002/assets/148667427/6ed63f3d-7e33-4e81-bf07-61dbdf2f5a66)
+     ![image](https://github.com/KostyanL1/kpz_lab_002/assets/148667427/bc7c826c-b2b4-4d65-8492-0ad80865b55e)
+     ![image](https://github.com/KostyanL1/kpz_lab_002/assets/148667427/023fd5f7-5c05-45a2-9b21-68e430cc0ede)
+
+   - Перегляд інформації про конкретний корм.
+     ![image](https://github.com/KostyanL1/kpz_lab_002/assets/148667427/4248c8b9-c457-42fa-a771-6423d0c52ebc)
+
+   - Перегляд списку всіх кормів.
+     ![image](https://github.com/KostyanL1/kpz_lab_002/assets/148667427/41908374-813c-428f-94e2-6a61e48b8334)
+
 
 4. **Робітники**
    - Додавання нових робітників у систему.
-    ![image](https://github.com/KostyanL1/kpz_lab_002/assets/148667427/61d8b488-a3f8-4e4f-b5a8-a804b8891fb5)
+    ![image](https://github.com/KostyanL1/kpz_lab_002/assets/148667427/572ea32f-89ca-465f-9f95-1d656595d669)
+
    - Відображення списку всіх робітників у зоопарку.
-     ![image](https://github.com/KostyanL1/kpz_lab_002/assets/148667427/d5717b4f-91cd-4b72-abf7-ca3a659bb0d7)
+     ![image](https://github.com/KostyanL1/kpz_lab_002/assets/148667427/e03e2f8f-821d-44d0-ad39-11999c4720d2)
+
    - Перегляд детальної інформації про конкретного робітника.
-     ![image](https://github.com/KostyanL1/kpz_lab_002/assets/148667427/39b88099-0979-4026-8e9c-1fee4cc95b52)
+     ![image](https://github.com/KostyanL1/kpz_lab_002/assets/148667427/b4d510a3-0252-44da-ac97-b2efa36908ea)
+
    - Редагування інформації про робітника.
-     ![image](https://github.com/KostyanL1/kpz_lab_002/assets/148667427/ef3b11b5-246d-4850-98fb-6a62968e1957)
+     ![image](https://github.com/KostyanL1/kpz_lab_002/assets/148667427/5dec8c71-2440-4783-8d96-a7f53dfe711c)
+
    - Видалення робітника з системи.
-     ![image](https://github.com/KostyanL1/kpz_lab_002/assets/148667427/4db51503-33e8-40b5-96ac-6a65eef72509)
-     ![image](https://github.com/KostyanL1/kpz_lab_002/assets/148667427/b65aed5f-61d9-4c43-8842-ca4902e04ee2)
+     ![image](https://github.com/KostyanL1/kpz_lab_002/assets/148667427/ea7f5085-12ab-41c6-b177-2c5b1c90f587)
+     ![image](https://github.com/KostyanL1/kpz_lab_002/assets/148667427/5261a740-17cd-465d-865e-02d4fbdfcae5)
 
 ## Застосовані принципи програмування
 
