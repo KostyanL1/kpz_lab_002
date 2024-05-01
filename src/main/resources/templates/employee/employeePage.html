@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Робітники</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        form {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        div {
+            background-color: #fff;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        a {
+            text-decoration: none;
+            color: #333;
+        }
+
+        input[type="submit"] {
+            background-color: #86469C;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #6d3b81;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Робітники</h1>
+    <form th:action="@{/main}">
+        <input type="submit" value="На головну">
+    </form>
+    <div th:each="employee : ${employees}">
+        <a th:href="@{/employees/{id}(id=${employee.getId()})}" th:text="${'id: ' + employee.getId() + ' '
+        + employee.getName() + ' ' + employee.getSurname() + ' | ' + employee.roleFormat() }"></a>
+    </div>
+    <form th:action="@{/employees/new}">
+        <input type="submit" value="Додати">
+    </form>
+</div>
+</body>
+</html>

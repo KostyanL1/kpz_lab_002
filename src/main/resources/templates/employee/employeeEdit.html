@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Зміна</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        form {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        input[type="text"],
+        select {
+            padding: 8px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            width: 100%;
+            margin-bottom: 10px;
+        }
+
+        input[type="submit"] {
+            background-color: #86469C;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #6d3b81;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Зміна</h1>
+    <form th:action="@{/employees}">
+        <input type="submit" value="Повернутись назад">
+    </form>
+    <form th:method="PATCH" th:action="@{/employees/{id}(id=${employee.getId()})}" th:object="${employee}">
+        <label for="role">Посада: </label>
+        <select th:field="*{role}" th:selected="${employee.getRole()}" id="role">
+            <option th:value="OHORONETS">Охронець</option>
+            <option th:value="NAGLYADACH">Наглядач</option>
+            <option th:value="KASIR">Касир</option>
+            <option th:value="PRIBIRALNIK">Прибиральник</option>
+        </select>
+        <br>
+        <label for="salary">Заробітня плата: </label>
+        <input type="text" th:field="*{salary}" id="salary">
+        <br>
+        <input type="submit" value="Зберегти">
+    </form>
+</div>
+</body>
+</html>

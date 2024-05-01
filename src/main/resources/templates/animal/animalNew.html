@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Новий</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        form {
+            text-align: center;
+            margin-bottom: 20px;
+            width: 100%;
+            max-width: 400px;
+            padding: 0 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        input[type="text"],
+        select,
+        button[type="submit"] {
+            padding: 8px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            width: calc(100% - 20px);
+            margin: 8px 0;
+            box-sizing: border-box;
+        }
+
+        button[type="submit"] {
+            background-color: #86469C;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #6d3b81;
+        }
+    </style>
+</head>
+<body>
+<form th:action="@{/animals}">
+    <button type="submit">Повернутись назад</button>
+</form>
+<form th:method="POST" th:action="@{/animals}" th:object="${animal}">
+    <label for="type">Тип тварини: </label>
+    <input type="text" th:field="*{type}" id="type">
+    <br>
+    <label for="animalCategory">Категорія тварини:  </label>
+    <select th:field="*{category}" id="animalCategory">
+        <option th:value="RYBA">Риба</option>
+        <option th:value="SAVETS">Савець</option>
+        <option th:value="GRIZUN">Гризун</option>
+        <option th:value="PTAH">Птах</option>
+    </select>
+    <br>
+    <label for="name">Кличка: </label>
+    <input type="text" th:field="*{name}" id="name">
+    <br>
+    <label for="weight">Вага: </label>
+    <input type="text" th:field="*{weight}" id="weight">
+    <br>
+    <label for="volier">Вольєр: </label>
+    <select id="volier" name="volierId">
+        <option th:each="volier : ${voliers}" th:value="${volier.getId()}" th:text="${'№-' + volier.getId()} + ' - ' +
+        ${volier.volierTypeFormat()}"></option>
+    </select>
+    <br>
+    <label for="corm" ></label>
+    <select id="corm" name="cormId">
+        <option th:each="corm : ${corms}" th:value="${corm.getId()}" th:text="${corm.getName()}"></option>
+    </select>
+    <br>
+    <button type="submit">Додати</button>
+</form>
+</body>
+</html>

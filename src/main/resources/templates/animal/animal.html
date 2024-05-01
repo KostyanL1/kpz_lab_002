@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Тварина</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+      margin: 0;
+      padding: 20px;
+    }
+
+    h1 {
+      color: #333;
+      text-align: center;
+    }
+
+    .container {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      width: 10%;
+      margin: 0 auto; /* це центрує контейнер на сторінці */
+    }
+
+    p {
+      margin: 5px 0;
+    }
+
+    a {
+      text-decoration: none;
+      color: #333;
+    }
+
+    input[type="submit"] {
+      background-color: #86469C;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      width: 100%; /* робимо кнопки по ширині тексту */
+      margin-top: 10px;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #6d3b81;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <h1>Тварина</h1>
+  <form th:action="@{/main}">
+    <input type="submit" value="На головну">
+  </form>
+  <form th:action="@{/animals}">
+    <input type="submit" value="Повернутись назад">
+  </form>
+
+  <p th:text="${'id: ' +  animal.getId()}"></p>
+  <p th:text="${'Ім`я: ' +  animal.getName()}"></p>
+  <p th:text="${'Тип: ' +  animal.getType()}"></p>
+  <p th:text="${'Категорія: ' +  animal.categoryFormat()}"></p>
+  <p th:text="${'Вага: ' +  animal.getWeight()} + 'кг.'"></p>
+  <a th:href="@{/corms/{id}(id=${animal.getCorm().getId()})}" th:text="${'Корм: ' +  animal.getCorm().getName()}"></a>
+  <br>
+  <a th:href="@{/voliers/{id}(id=${animal.getVolier().getId()})}"
+     th:text="${ 'Вольєр: №-'  + animal.getVolier().getId() + ' - ' +  animal.getVolier().volierTypeFormat()}"></a>
+  <form th:action="@{/animals/edit/{id}(id=${animal.getId()})}">
+    <input type="submit" value="змінити">
+  </form>
+  <form th:method="DELETE" th:action="@{/animals/{id}(id=${animal.getId()})}">
+    <input type="submit" value="видалити">
+  </form>
+</div>
+</body>
+</html>

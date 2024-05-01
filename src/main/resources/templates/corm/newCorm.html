@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Додати новий корм</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        form {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        input[type="text"],
+        select {
+            padding: 8px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            width: 100%;
+            margin-bottom: 10px;
+        }
+
+        input[type="submit"] {
+            background-color: #86469C;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #6d3b81;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Додати новий корм</h1>
+    <form th:action="@{/corms}">
+        <input type="submit" value="Повернутись назад">
+    </form>
+
+    <form th:method="POST" th:action="@{/corms}" th:object="${corm}">
+        <label for="name">Назва корму</label>
+        <input type="text" th:field="*{name}" id="name">
+        <br>
+        <label for="cormCategory">Категорія корму: </label>
+        <select th:field="*{category}" id="cormCategory">
+            <option th:value="RYBA">Для риби</option>
+            <option th:value="SAVETS">Для савців</option>
+            <option th:value="GRIZUN">Для гризунів</option>
+            <option th:value="PTAH">Для птахів</option>
+        </select>
+        <br>
+        <input type="submit" value="Додати">
+    </form>
+</div>
+</body>
+</html>

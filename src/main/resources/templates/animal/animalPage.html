@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Тварини</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+
+        .center {
+            text-align: center;
+        }
+
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            width: 70%;
+            margin: 0 auto; /* це центрує контейнер на сторінці */
+        }
+
+        .list-item {
+            background-color: #fff;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        a {
+            text-decoration: none;
+            color: #333;
+        }
+
+        input[type="submit"] {
+            background-color: #86469C;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #6d3b81;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Тварини</h1>
+    <div class="center">
+        <form th:action="@{/main}">
+            <input type="submit" value="На головну">
+        </form>
+        <br>
+        <div th:each="animal : ${animals}" class="list-item">
+            <a th:href="@{/animals/{id}(id=${animal.getId()})}" th:text="${ 'id: ' + animal.getId() + ' | ' + animal.getName() + ' | ' + ' №-' + animal.getVolier().getId() + ' - ' +  animal.getVolier().volierTypeFormat()}"></a>
+        </div>
+        <form th:action="@{/animals/new}">
+            <input type="submit" value="Додати">
+        </form>
+    </div>
+</div>
+</body>
+</html>

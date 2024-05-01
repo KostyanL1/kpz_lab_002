@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Головна сторінка</title>
+</head>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f2f2f2;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+
+    .container {
+        text-align: center;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        width: 300px;
+        height: 300px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* тінь для контейнера */
+    }
+
+    h1 {
+        color: #333;
+    }
+
+    form {
+        margin: 10px;
+        display: inline-block;
+        width: 45%;
+    }
+
+    input[type="submit"] {
+        background-color: #86469C;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    input[type="submit"]:hover {
+        background-color: #6d3b81;
+    }
+
+
+</style>
+<body>
+<div class="container">
+    <h1>Кабінет обліку зоопарку</h1>
+    <form th:action="@{/animals}">
+        <input type="submit" value="Тварини">
+    </form>
+    <form th:action="@{/voliers}">
+        <input type="submit" value="Вольєри">
+    </form>
+    <form th:action="@{/corms}">
+        <input type="submit" value="Корми">
+    </form>
+    <form th:action="@{/employees}">
+        <input type="submit" value="Робітники">
+    </form>
+</div>
+
+</body>
+</html>

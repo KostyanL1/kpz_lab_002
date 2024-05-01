@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Зміна тварини</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        form {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        input[type="text"],
+        select {
+            padding: 8px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            width: 100%;
+            margin-bottom: 10px;
+        }
+
+        .error {
+            color: red;
+            margin-top: 5px;
+        }
+
+        input[type="submit"] {
+            background-color: #86469C;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #6d3b81;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Зміна тварини</h1>
+    <form th:action="@{/animals/{id}(id=${animal.getId()})}">
+        <input type="submit" value="Повернутись назад">
+    </form>
+    <form th:method="PATCH" th:action="@{/animals/save/{id}(id=${animal.getId()})}" th:object="${animal}">
+        <label for="weight">Вага: </label>
+        <input type="text" th:field="*{weight}" id="weight">
+        <div th:if="${#fields.hasErrors('weight')}" th:errors="*{weight}" class="error"></div>
+        <br>
+        <label for="corm">Корм: </label>
+        <select id="corm" name="corm">
+            <option th:each="corm : ${corms}" th:value="${corm.getId()}" th:text="${corm.getName()}"
+                    th:selected="${corm.getId() == animal.getCorm().getId()}"></option>
+        </select>
+        <br>
+        <label for="volier">Вольєр: </label>
+        <select id="volier" name="volier">
+            <option th:each="volier : ${voliers}" th:value="${volier.getId()}" th:text="${'№-' + volier.getId() + ' - ' + volier.volierTypeFormat()}"
+                    th:selected="${volier.getId() == animal.getVolier().getId()}"></option>
+        </select>
+        <br>
+        <input type="submit" value="Зберегти">
+    </form>
+</div>
+</body>
+</html>
